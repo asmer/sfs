@@ -22,7 +22,7 @@ echo "Host: $HOST"
 
 SSHFS_PATH="$SSHFS_ROOT/$HOST/$USER"
 
-mkdir -p $SSHFS_PATH
+mkdir -p $SSHFS_PATH > /dev/null 2>&1
 sshfs $1 $SSHFS_PATH
 
 if [ "$2" == '-p' ] ; then
